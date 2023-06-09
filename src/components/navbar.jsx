@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setLoginData(JSON.parse(window.localStorage.getItem("loginData")));
-  }, []);
+  }, [setLoginData]);
 
   const { username } = loginData;
 
@@ -17,7 +17,14 @@ const Navbar = () => {
     <div className="flex h-16 items-center justify-between border-b-[1px] border-b-richblack-700 bg-richblack-800">
       {/* Image */}
 
-      <img src={logo} width={160} height={42} loading="lazy" className="ml-8" />
+      <img
+        src={logo}
+        alt="logo"
+        width={160}
+        height={42}
+        loading="lazy"
+        className="ml-8"
+      />
 
       <div className="flex gap-10 items-center">
         <span className=" text-[2rem] font-bold  text-blue-50 ">
